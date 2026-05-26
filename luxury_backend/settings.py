@@ -80,7 +80,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CORS — permite que Flutter se conecte
 CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
@@ -96,3 +95,10 @@ CSRF_TRUSTED_ORIGINS = [
     'https://web-production-76013.up.railway.app',
     'https://edisson-pyton.github.io',
 ]
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME':  timedelta(hours=24),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
+}
